@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>일 왜 함?</h1>
+      <div id="message-area"></div>
+
+      <!-- Auth Container -->
+      <div id="auth-container">
+        <div class="form-container">
+          <h2>회원가입</h2>
+          <form id="signup-form">
+            <input type="text" name="username" placeholder="아이디" required>
+            <input type="password" name="password" placeholder="비밀번호" required>
+            <button type="submit">회원가입</button>
+          </form>
+        </div>
+        <div class="form-container">
+          <h2>로그인</h2>
+          <form id="login-form">
+            <input type="text" name="username" placeholder="아이디" required>
+            <input type="password" name="password" placeholder="비밀번호" required>
+            <button type="submit">로그인</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Portfolio Container -->
+      <div id="portfolio-container" style="display: none;">
+        <button id="logout-btn">로그아웃</button>
+        <h2>포트폴리오</h2>
+        <div id="preset-buttons" style="margin-bottom: 1rem; display: flex; gap: 10px; justify-content: center;">
+          <button type="button" class="preset-btn" data-preset="1">프리셋 1</button>
+          <button type="button" class="preset-btn" data-preset="2">프리셋 2</button>
+          <button type="button" class="preset-btn" data-preset="3">프리셋 3</button>
+        </div>
+        <form id="portfolio-form">
+          <div id="asset-list">
+            <!-- Asset items will be dynamically added here -->
+          </div>
+          <button type="button" id="add-asset">자산 추가</button>
+          <button type="button" id="show-cash-form">현금 추가</button>
+          <div id="cash-form" style="display:none; margin-top:10px;">
+            <select id="cash-symbol">
+              <option value="KRW">KRW (원화)</option>
+              <option value="USD">USD (달러)</option>
+              <option value="USDT">USDT (테더)</option>
+            </select>
+            <input type="number" id="cash-amount" placeholder="금액" style="width:100px;">
+            <button type="button" id="add-cash-btn">확인</button>
+            <button type="button" id="cancel-cash-btn">취소</button>
+          </div>
+          <!-- 도움말 버튼 및 모달 추가 -->
+          <button id="help-btn" type="button" style="float:right; margin-bottom:10px;">도움말</button>
+          <div id="help-modal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); justify-content:center; align-items:center;">
+            <div style="background:#fff; padding:2rem; border-radius:10px; max-width:400px; width:90%; position:relative;">
+              <button id="close-help" style="position:absolute; top:10px; right:10px; font-size:1.2rem; background:none; border:none; cursor:pointer;">✕</button>
+              <h3>입력 예시</h3>
+              <div style="font-size:0.98rem;">
+                <b>암호화폐</b><br>
+                심볼: BTCUSDT<br>
+                수량: 1<br>
+                종류: crypto<br>
+                거래소: BINANCE<br><br>
+                <b>미국주식</b><br>
+                심볼: TSLA<br>
+                수량: 5<br>
+                종류: america<br>
+                거래소: NASDAQ<br><br>
+                <b>한국주식</b><br>
+                심볼: 005930<br>
+                수량: 10<br>
+                종류: korea<br>
+                거래소: KRX<br><br>
+                <b>금</b><br>
+                심볼: GOLD<br>
+                수량: 2<br>
+                종류: cfd<br>
+                거래소: OANDA<br>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="action-buttons">
+          <button id="save-btn">포트폴리오 저장</button>
+          <button id="calculate-btn">가치 계산</button>
+        </div>
+        <div id="results"></div>
+      </div>
+
+      
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>

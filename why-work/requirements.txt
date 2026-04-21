@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+requests
+yfinance
+jinja2
+python-multipart
+aiohttp
+tradingview-ta
+gunicorn
+sqlalchemy
+aiomysql
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
+greenlet

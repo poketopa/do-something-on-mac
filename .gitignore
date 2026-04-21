@@ -80,3 +80,18 @@ AuthKey_*.p8
 .idea/
 *.swp
 *~
+
+# ============================================================
+# Secrets & Environment
+# ============================================================
+.env
+*.env
+!*.env.example
+
+# ============================================================
+# Spring Boot / Gradle (do-something-spring/)
+# ============================================================
+do-something-spring/.gradle/
+do-something-spring/build/
+do-something-spring/out/
+do-something-spring/bin/
