@@ -9,11 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Caffeine 기반 In-memory 캐시 설정.
- * <p>외부 가격 API 호출 비용을 줄이기 위해 10분 TTL로 캐싱한다.
- * 기존 Python 코드의 {@code CACHE_DURATION = 600} (초)와 동일한 정책이다.</p>
- */
 @Configuration
 @EnableCaching
 public class CacheConfig {
